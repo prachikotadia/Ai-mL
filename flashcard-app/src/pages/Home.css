@@ -1,0 +1,172 @@
+.home-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: transparent;
+    color: #333;
+}
+
+.home-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.home-header h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #cbd5e1 0%, #ffffff 50%, #94a3b8 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+}
+
+.home-header p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Ambient Backgrounds */
+.ambient-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.orb-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.6) 0%, rgba(168, 85, 247, 0) 70%);
+    animation: drift 20s infinite alternate ease-in-out;
+}
+
+.orb-2 {
+    bottom: 10%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.5) 0%, rgba(244, 63, 94, 0) 70%);
+    animation: drift 25s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes drift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(30px, 50px);
+    }
+}
+
+.section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.section-card {
+    /* Glassmorphism applied via inline styles now */
+    border-radius: 16px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    display: block;
+    margin-bottom: 2px;
+    /* Spacing */
+}
+
+.section-card:active {
+    transform: scale(0.98);
+}
+
+.section-info h2 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.section-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.status-badge {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.status-badge.in-progress {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.completed {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.progress-container {
+    margin-top: 10px;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.progress-bar-bg {
+    height: 8px;
+    background-color: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #a855f7);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.card-arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #9ca3af;
+}

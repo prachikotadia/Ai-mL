@@ -1,0 +1,207 @@
+.flashcard-container {
+  width: 100%;
+  max-width: 360px;
+  /* Slightly narrower for nicer proportions */
+  height: 520px;
+  /* Controlled height */
+  perspective: 1200px;
+  cursor: pointer;
+  position: absolute;
+  /* Essential for stacking */
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+}
+
+.flashcard-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 28px;
+  /* Softer rounded corners */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Front Styling */
+.flashcard-front {
+  /* Background set dynamically via inline style */
+  align-items: center;
+  padding: 0;
+}
+
+.card-header {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin: -8px;
+  /* Increase tap area without messing layout */
+  border-radius: 50%;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.star-btn:active {
+  transform: scale(0.95);
+}
+
+.learning-badge {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+
+.card-content-front {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  gap: 20px;
+}
+
+.card-content-front h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.icon-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-footer-action {
+  width: 100%;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.tap-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tap-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Back Styling */
+.flashcard-back {
+  background: #0f172a;
+  color: #e2e8f0;
+  transform: rotateY(180deg);
+  text-align: left;
+  padding: 24px 28px;
+}
+
+.card-content-back {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  justify-content: center;
+}
+
+.section {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #94a3b8;
+  /* Slate 400 */
+}
+
+.section p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #cbd5e1;
+  /* Slate 300 */
+}
+
+/* Specific Section Themes - Dark Mode Adapted */
+.section.definition {
+  background-color: rgba(22, 101, 52, 0.3);
+  border-color: rgba(74, 222, 128, 0.2);
+}
+
+.section.definition h3 {
+  color: #86efac;
+}
+
+.section.example {
+  background-color: rgba(161, 98, 7, 0.3);
+  border-color: rgba(250, 204, 21, 0.2);
+}
+
+.section.example h3 {
+  color: #fde047;
+}
+
+.section.tip {
+  background-color: rgba(107, 33, 168, 0.3);
+  border-color: rgba(192, 132, 252, 0.2);
+}
+
+.section.tip h3 {
+  color: #d8b4fe;
+}
