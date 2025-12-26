@@ -1,9 +1,8 @@
 .flashcard-container {
   width: 100%;
   max-width: 360px;
-  /* Slightly narrower for nicer proportions */
-  height: 520px;
-  /* Controlled height */
+  /* Dynamic height: tall on desktop, but capped at 60% of viewport on mobile */
+  height: min(540px, 62vh);
   perspective: 1200px;
   cursor: pointer;
   position: absolute;
@@ -29,11 +28,14 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 28px;
-  /* Softer rounded corners */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  /* Enable scrolling if content overflows */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Front Styling */
@@ -90,8 +92,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 32px;
-  gap: 20px;
+  padding: 20px 32px;
+  gap: 16px;
+  /* Allow shrinking */
+  min-height: 0;
 }
 
 .card-content-front h2 {

@@ -116,7 +116,7 @@ const FlashcardView = () => {
                 <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
             </div>
 
-            <main className="main-content" style={{ position: 'relative', height: '540px', marginTop: '20px' }}>
+            <main className="main-content" style={{ position: 'relative', height: 'min(540px, 62vh)', marginTop: '20px' }}>
                 <AnimatePresence mode="popLayout">
                     {cardStack.map((card) => {
                         const isCurrent = card.index === currentIndex;
